@@ -6,29 +6,50 @@ namespace Day9AddressBook
 {
    public class UC1_AddBook
     {
-        public string FirstName;
-        public string LastName;
-        public string Address;
-        public string City;
-        public string State;
-        public int Zipcode;
-        public double PhoneNum;
-        public string Email;
-        public UC1_AddBook(string FirstName, string LastName, string Address, string City, string State, int Zipcode, double PhoneNum, string Email)
-        {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string MobileNumber { get; set; }
+        public string Address { get; set; }
+        public string State { get; set; }
+        public string Zipcode { get; set; }
+        public string Email { get; set; }
 
-            this.FirstName = FirstName;
-            this.LastName = LastName;
-            this.Address = Address;
-            this.City = City;
-            this.State = State;
-            this.Zipcode = Zipcode;
-            this.PhoneNum = PhoneNum;
-            this.Email = Email;
-        }
-        public string toString()
+        public static List<UC1_AddBook> ContactDetails = new List<UC1_AddBook>();
+        public static void Contact()
         {
-            return "Contact Detials:\n" +"FirstName:\t"+ this.FirstName +"\n"+"LastName:\t" + this.LastName +"\n" + "Address:\t" + this.Address + "\n" + "City:\t" + this.City + "\n" + "State:\t" + this.State + "\n" + "Zipcode:\t" + this.Zipcode + "\n" + "Phonenumber:\t" + this.PhoneNum + "\n" + "Email:\t" + this.Email;
-        } 
+            UC1_AddBook person = new UC1_AddBook();
+
+            Console.Write("Enter FirstName: ");
+            person.FirstName = Console.ReadLine();
+
+            Console.Write("Enter LastName: ");
+            person.LastName = Console.ReadLine();
+
+            Console.Write("Enter Mobile Number: ");
+            person.MobileNumber = Console.ReadLine();
+
+            Console.Write("Enter Address : ");
+            person.Address = Console.ReadLine();
+
+            Console.Write("Enter State : ");
+            person.State = Console.ReadLine();
+
+            Console.Write("Enter ZipCode : ");
+            person.Zipcode = Console.ReadLine();
+
+            Console.Write("Enter Email : ");
+            person.Email = Console.ReadLine();
+
+            ContactDetails.Add(person);
+
+            Console.WriteLine("First Name: " + person.FirstName);
+            Console.WriteLine("Last Name: " + person.LastName);
+            Console.WriteLine("Mobile Number: " + person.MobileNumber);
+            Console.WriteLine("Address : " + person.Address);
+            Console.WriteLine("State : " + person.State);
+            Console.WriteLine("ZipCode : " + person.Zipcode);
+            Console.WriteLine("Email : " + person.Email);
+            Console.ReadKey();
+        }
     }
 }
