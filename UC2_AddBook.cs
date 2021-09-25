@@ -49,12 +49,10 @@ namespace Day9AddressBook
             Console.WriteLine("Email : " + person.Email);
             Console.WriteLine("-------------------------------------------");
             ////edit 1 or more Entries
-            Console.Write("Enter Number AddressBook Id to be Created: ");
-            int N= Convert.ToInt32(Console.ReadLine());
-            for (int i=0; i<N; i++)
+            Console.Write("Do You Want to Create New Contact? (Y/N): ");
+            string N = Convert.ToString(Console.ReadLine());
+            while (N == "y" || N == "Y")
             {
-                Console.WriteLine("AddressBook ID=" + (100 + i));
-
                 Console.Write("Enter FirstName: ");
                 person.FirstName = Console.ReadLine();
 
@@ -75,7 +73,7 @@ namespace Day9AddressBook
 
                 Console.Write("Enter Email : ");
                 person.Email = Console.ReadLine();
-                
+
                 ContactDetail.Add(person);
                 Console.WriteLine("First Name: " + person.FirstName);
                 Console.WriteLine("Last Name: " + person.LastName);
@@ -83,8 +81,10 @@ namespace Day9AddressBook
                 Console.WriteLine("Address : " + person.Address);
                 Console.WriteLine("State : " + person.State);
                 Console.WriteLine("ZipCode : " + person.Zipcode);
-                Console.WriteLine("Email : " + person.Email);
                 Console.WriteLine("-------------------------------------------");
+
+                Console.Write("Do You Want to Create New Contact? (Y/N): ");
+                N = Convert.ToString(Console.ReadLine());
             }
         }
     }
