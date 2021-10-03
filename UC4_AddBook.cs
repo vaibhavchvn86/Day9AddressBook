@@ -8,14 +8,14 @@ namespace Day9AddressBook
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string MobileNumber { get; set; }
+        public double MobileNumber { get; set; }
         public string Address { get; set; }
         public string State { get; set; }
-        public string Zipcode { get; set; }
+        public double Zipcode { get; set; }
         public string Email { get; set; }
 
         public static List<UC4_AddBook> ContactDetail = new List<UC4_AddBook>();
-        public static void AddBook2()
+        public static UC4_AddBook AddBook2()
         {
            
             UC4_AddBook person = new UC4_AddBook();
@@ -26,7 +26,7 @@ namespace Day9AddressBook
             person.LastName = Console.ReadLine();
 
             Console.Write("Enter Mobile Number: ");
-            person.MobileNumber = Console.ReadLine();
+            person.MobileNumber = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Enter Address : ");
             person.Address = Console.ReadLine();
@@ -35,7 +35,7 @@ namespace Day9AddressBook
             person.State = Console.ReadLine();
 
             Console.Write("Enter ZipCode : ");
-            person.Zipcode = Console.ReadLine();
+            person.Zipcode = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Enter Email : ");
             person.Email = Console.ReadLine();
@@ -62,7 +62,7 @@ namespace Day9AddressBook
                 person.LastName = Console.ReadLine();
 
                 Console.Write("Enter Mobile Number: ");
-                person.MobileNumber = Console.ReadLine();
+                person.MobileNumber = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Enter Address : ");
                 person.Address = Console.ReadLine();
@@ -71,7 +71,7 @@ namespace Day9AddressBook
                 person.State = Console.ReadLine();
 
                 Console.Write("Enter ZipCode : ");
-                person.Zipcode = Console.ReadLine();
+                person.Zipcode = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Enter Email : ");
                 person.Email = Console.ReadLine();
@@ -93,6 +93,7 @@ namespace Day9AddressBook
             switch (choice)
             {
                 case "Y":
+                    Console.WriteLine("Enter FirstName");
                     var Edit1 = Console.ReadLine();
                     var editobj1 = ContactDetail.Find(x => x.FirstName == Edit1);
                     ContactDetail.Remove(person);
@@ -105,12 +106,16 @@ namespace Day9AddressBook
                     Console.WriteLine("Email : " + person.Email);
                     Console.WriteLine("-------------------------------------------");
                     Console.WriteLine("Entry Deleted");
+                    ContactDetail.Add(person);
+                    break;
+                case "N":
+                    Console.WriteLine("Nothing Deleted");
                     break;
                 default:
-                    Console.WriteLine("No Entry to Delete");
+                    Console.WriteLine("Invalid Choice, Nothing Deleted");
                     break;
             }
-            Console.ReadKey();
+            return person;
         }
     }
 }
