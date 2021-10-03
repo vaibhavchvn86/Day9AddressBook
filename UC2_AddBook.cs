@@ -8,10 +8,10 @@ namespace Day9AddressBook
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string MobileNumber { get; set; }
+        public double MobileNumber { get; set; }
         public string Address { get; set; }
         public string State { get; set; }
-        public string Zipcode { get; set; }
+        public double Zipcode { get; set; }
         public string Email { get; set; }
 
         public static List<UC2_AddBook> ContactDetail = new List<UC2_AddBook>();
@@ -25,7 +25,7 @@ namespace Day9AddressBook
             person.LastName = Console.ReadLine();
 
             Console.Write("Enter Mobile Number: ");
-            person.MobileNumber = Console.ReadLine();
+            person.MobileNumber = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Enter Address : ");
             person.Address = Console.ReadLine();
@@ -34,7 +34,7 @@ namespace Day9AddressBook
             person.State = Console.ReadLine();
 
             Console.Write("Enter ZipCode : ");
-            person.Zipcode = Console.ReadLine();
+            person.Zipcode = Convert.ToDouble(Console.ReadLine());
 
             Console.Write("Enter Email : ");
             person.Email = Console.ReadLine();
@@ -60,7 +60,7 @@ namespace Day9AddressBook
                 person.LastName = Console.ReadLine();
 
                 Console.Write("Enter Mobile Number: ");
-                person.MobileNumber = Console.ReadLine();
+                person.MobileNumber = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Enter Address : ");
                 person.Address = Console.ReadLine();
@@ -69,7 +69,7 @@ namespace Day9AddressBook
                 person.State = Console.ReadLine();
 
                 Console.Write("Enter ZipCode : ");
-                person.Zipcode = Console.ReadLine();
+                person.Zipcode = Convert.ToDouble(Console.ReadLine());
 
                 Console.Write("Enter Email : ");
                 person.Email = Console.ReadLine();
